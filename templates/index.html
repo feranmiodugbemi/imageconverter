@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Image converter</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/index.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    </head>
+    <body>
+        
+        <h1> This is an image converter </h1>
+        <div class="container py-5">
+
+    <!-- For demo purpose -->
+    <header class="text-white text-center">
+        <h1 class="display-4">Bootstrap image upload</h1>
+        <p class="lead mb-0">Build a simple image upload button using Bootstrap 4.</p>
+        <p class="mb-5 font-weight-light">Snippet by
+            <a href="https://bootstrapious.com" class="text-white">
+                <u>Bootstrapious</u>
+            </a>
+        </p>
+        <img src="https://bootstrapious.com/i/snippets/sn-img-upload/image.svg" alt="" width="150" class="mb-4">
+    </header>
+
+
+    <div class="row py-4">
+        <div class="col-lg-6 mx-auto">
+
+            <!-- Upload image input-->
+            <form action="/convert" enctype="multipart/form-data" method="post" id="form">
+            <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+                <input id="upload" type="file" onchange="readURL(this);" name="image" accept=".jpg, .png, .bmp, .eps, .gif, .im, .msp, .pcx, .ppm, .tiff" class="form-control border-0" multiple>
+                <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+                <div class="input-group-append">
+                    <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <i class="fa fa-cloud-upload mr-2 text-muted"></i><small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+                </div>
+            </div>
+            
+
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" name="format">
+                    <option value="BMP" selected>BMP</option>
+                    <option value="EPS">EPS</option>
+                    <option value="GIF">GIF</option>
+                    <option value="IM">IM</option>
+                    <option value="JPEG">JPEG</option>
+                    <option value="MSP">MSP</option>
+                    <option value="PCX">PCX</option>
+                    <option value="PNG">PNG</option>
+                    <option value="PPM">PPM</option>
+                    <option value="TIFF">TIFF</option>
+                </select>
+                <div class="input-group-append">
+                     <label class="input-group-text" for="inputGroupSelect02">To</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-outline-secondary">convert</button>
+            <br>
+            </form>
+            <!-- Uploaded image area-->
+            <p class="font-italic text-white text-center">The image uploaded will be rendered inside the box below.</p>
+            <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+        </div>
+    </div>
+</div>
+
+
+        <script src="static/javascript/index.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
